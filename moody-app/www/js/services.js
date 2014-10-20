@@ -1,8 +1,30 @@
 angular.module('moody.services')
 
-/**
- * A simple example service that returns some data.
- */
+.factory('DataService', function($q, $timeout) {
+
+  var load = function () {
+  }
+
+  var getEmotions = function() {
+
+    var deferred = $q.defer();
+
+    $timeout( function(){
+      deferred.resolve([
+        { name: 'Sad' },
+        { name: 'Happy' },
+      ]);
+
+    }, 1500);
+
+    return deferred.promise;
+  };
+
+  return {
+    load : load,
+    getEmotions: getEmotions
+  }
+})
 .factory('Friends', function() {
   // Might use a resource here that returns a JSON array
 

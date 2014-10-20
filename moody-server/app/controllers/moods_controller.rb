@@ -4,5 +4,5 @@ class MoodsController < ApplicationController
     @moods = Mood.all
     render json: @moods
   end
-  
+
 end

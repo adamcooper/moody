@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('moody.controllers')
 
 .controller('RecordCtrl', function($scope) {
 })

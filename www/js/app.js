@@ -43,7 +43,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-record': {
           templateUrl: 'templates/tab-record.html',
-          controller: 'DashCtrl'
+          controller: 'RecordCtrl'
         }
       }
     })
@@ -53,7 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       views: {
         'tab-learn': {
           templateUrl: 'templates/tab-learn.html',
-          controller: 'FriendsCtrl'
+          controller: 'LearnCtrl'
         }
       }
     })

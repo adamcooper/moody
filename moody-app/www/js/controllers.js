@@ -5,7 +5,7 @@ angular.module('moody.controllers')
 
 .controller('LearnCtrl', function($scope, DataService, $ionicLoading) {
 
-  $scope.loadingIndicator = $ionicLoading.show({
+  $ionicLoading.show({
       content: 'Loading Data',
       animation: 'fade-in',
       showBackdrop: true,
@@ -16,7 +16,7 @@ angular.module('moody.controllers')
   DataService.getEmotions().then(
       function(emotions) {
           $scope.emotions = emotions;
-          $scope.loadingIndicator.hide();
+          $ionicLoading.hide();
       }
   )
 })

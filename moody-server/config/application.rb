@@ -22,5 +22,12 @@ module MoodyServer
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # turn off asset pipeline b/c ionic serves everything
+    config.assets.enabled = false
+    config.generators do |g|
+      g.assets false
+    end
+
   end
 end

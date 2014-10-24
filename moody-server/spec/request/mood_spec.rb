@@ -20,8 +20,7 @@ RSpec.describe "Moods", type: :request do
   describe "create" do
     it "returns valid if user_id is present" do
       user = FactoryGirl.create(:user)
-      post '/moods.json',{mood: {user_id: user.id}}
-      puts response.body
+      post '/moods.json', { mood: { user_id: user.id } }
       expect(response).to be_success
     end
 

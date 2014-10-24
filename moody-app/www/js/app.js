@@ -1,6 +1,6 @@
 angular.module('moody.directives', [])
 angular.module('moody.controllers', [])
-angular.module('moody.services', ['ionic.utils'])
+angular.module('moody.services', ['ionic.utils', 'ngResource'])
 angular.module('moody',
                ['ionic',
                  'moody.controllers',

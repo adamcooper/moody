@@ -25,6 +25,9 @@ angular.module('moody.services')
     getEmotions: getEmotions
   }
 })
+.factory('Emotion', function($resource) {
+  return $resource('http://localhost:3000/emotions/:id');
+})
 .factory('Friends', function() {
   // Might use a resource here that returns a JSON array
 

@@ -3,22 +3,24 @@ angular.module('moody.controllers')
 .controller('RecordCtrl', function($scope) {
 })
 
-.controller('LearnCtrl', function($scope, DataService, $ionicLoading) {
+.controller('LearnCtrl', function($scope, DataService, $ionicLoading, Emotion) {
 
-  $ionicLoading.show({
-      content: 'Loading Data',
-      animation: 'fade-in',
-      showBackdrop: true,
-      maxWidth: 200,
-      showDelay: 500
-  });
+  $scope.emotions = Emotion.query();
 
-  DataService.getEmotions().then(
-      function(emotions) {
-          $scope.emotions = emotions;
-          $ionicLoading.hide();
-      }
-  )
+  // $ionicLoading.show({
+  //     content: 'Loading Data',
+  //     animation: 'fade-in',
+  //     showBackdrop: true,
+  //     maxWidth: 200,
+  //     showDelay: 500
+  // });
+
+  // DataService.getEmotions().then(
+  //     function(emotions) {
+  //         $scope.emotions = emotions;
+  //         $ionicLoading.hide();
+  //     }
+  // )
 })
 
 .controller('FriendDetailCtrl', function($scope, $stateParams, Friends) {

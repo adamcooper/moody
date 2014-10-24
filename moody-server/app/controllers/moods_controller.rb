@@ -27,7 +27,7 @@ class MoodsController < ApplicationController
   private
 
   def mood_params
-    params.require(:mood).permit(:mood_id, :emotion_id)
+    params.require(:mood).permit(:user_id, :emotion_id)
   end
 
 end

@@ -31,4 +31,3 @@ class MoodsController < ApplicationController
   end
 
 end
-

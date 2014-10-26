@@ -24,7 +24,12 @@ RSpec.describe "Moods", type: :request do
       expect(response).to be_success
     end
 
-    it "stores an emotion_id"
+    it "returns valid if emotion_id is present" do
+      emotion = FactoryGirl.create(:emotion)
+      post '/moods.json', { mood: { emotion_id: emotion.id } }
+      expect(response).to be_success
+    end
+
     it "returns invalid if user_id is missing"
     it "returns invalid if emotion_id is missing"
   end

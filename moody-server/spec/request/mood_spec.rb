@@ -30,8 +30,17 @@ RSpec.describe "Moods", type: :request do
       expect(response).to be_success
     end
 
-    it "returns invalid if user_id is missing"
-    it "returns invalid if emotion_id is missing"
+    it "returns invalid if user_id is missing" do
+      user = FactoryGirl.create(:user)
+      post '/moods.json'
+      expect(response).not_to be_success
+    end
+
+    it "returns invalid if emotion_id is missing" do
+      emotion = FactoryGirl.create(:emotion)
+      post '/moods.json'
+      expect(response).not_to be_success
+    end
   end
 
 end
